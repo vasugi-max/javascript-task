@@ -103,20 +103,61 @@ if (unitsConsumed > 200) {
 console.log("Total Bill: ₹" + totalBill);
 // Units from 201–300 are charged at ₹4.00 per unit.
 let unitsConsumed3= 250;
-let totalBill = 0;
-if (unitsConsumed > 300) {
-    totalBill += (unitsConsumed - 300) * 5; 
-    unitsConsumed = 300;
+let totalBill3 = 0;
+if (unitsConsumed3 > 300) {
+    totalBill3 += (unitsConsumed3 - 300) * 5; 
+    unitsConsumed3 = 300;
 }
-if (unitsConsumed > 200) {
-    totalBill += (unitsConsumed - 200) * 4; 
-    unitsConsumed = 200;
+if (unitsConsumed3 > 200) {
+    totalBill3 += (unitsConsumed3 - 200) * 4; 
+    unitsConsumed3 = 200;
 }
-if (unitsConsumed > 100) {
-    totalBill += (unitsConsumed - 100) * 2.5; 
-    unitsConsumed = 100;
+if (unitsConsumed3 > 100) {
+    totalBill3 += (unitsConsumed3 - 100) * 2.5; 
+    unitsConsumed3 = 100;
 }
-totalBill += unitsConsumed * 1.5; 
+totalBill3 += unitsConsumed3* 1.5; 
+
+console.log("Total Bill: ₹" + totalBill3);
+// Units above 300 are charged at ₹5.00 per unit
+let unitsConsumed4 = 350; 
+let totalBill4 = 0;
+
+if (unitsConsumed4 <= 300) {
+    totalBill4 = unitsConsumed4 * 3; 
+} else {
+
+totalBill4 = (300 * 3) + ((unitsConsumed4 - 300) * 5);
+}
 
 console.log("Total Bill: ₹" + totalBill);
+// The total bill is calculated by adding the charges from each slab
+let units7 = 350; // Example units
+let bill7 = 0;
 
+bill7 += Math.min(units7, 100) * 1.5; 
+if (units7 > 100) bill += Math.min(units7 - 100, 100) * 2.5; 
+if (units7 > 200) bill += Math.min(units7 - 200, 100) * 4;
+if (units7 > 300) bill += (units7 - 300) * 5;
+
+console.log("Total Bill: ₹" + bill7);
+
+
+// Check if a triangle is valid / isosceles / equilateral / scalene
+let e = 5; 
+let f= 5; 
+let g= 8; 
+if (e + f > g && e +f > f && f + g > e) {
+    console.log("Triangle is valid.");
+
+    if (e === f && g === f) {
+        console.log("It is an Equilateral triangle.");
+    } else if (e === f || g === f ||e === g) {
+        console.log("It is an Isosceles triangle.");
+    } else {
+        console.log("It is a Scalene triangle.");
+    }
+
+} else {
+    console.log("Triangle is not valid.");
+}
